@@ -1,0 +1,229 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #047af8;
+    margin-bottom: 30px;
+}
+
+.emojis {
+    font-size: 60px; /* Increased font size */
+    margin-bottom: 20px;
+    transition: opacity 1s;
+}
+
+.blender-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.5s ease-out; /* Added opacity transition */
+    padding: 0;
+    
+    /* Centering the button */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blender-button:hover {
+    transform: rotate(20deg);
+}
+
+.blender-icon {
+    width: 120px; /* Increased size from 80px to 120px */
+    height: 120px; /* Increased size from 80px to 120px */
+    object-fit: contain; /* Ensure the image scales correctly without distortion */
+}
+
+/* Class to hide the mix button */
+.blender-button.hide-button {
+    opacity: 0;
+    pointer-events: none; /* Prevents any further interactions */
+}
+
+.animation-container {
+    position: relative;
+    width: 800px; /* Increased width */
+    height: 400px; /* Increased height */
+    margin: 20px auto;
+    display: none;
+    overflow: hidden;
+}
+
+.final-output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: blend 2s forwards;
+}
+
+.alaa-image {
+    width: 300px; /* Increased size */
+    height: 300px; /* Increased size */
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 2s, opacity 2s;
+}
+
+.meta-container {
+    position: relative;
+    margin-left: 60px; /* Increased margin */
+}
+
+.meta-logo {
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
+}
+
+.meta-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 24px; /* Increased font size */
+    text-align: center;
+}
+
+@keyframes blend {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes whirlpool {
+    from {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(1080deg);
+        opacity: 0;
+    }
+}
+
+.emojis.fade-out {
+    animation: whirlpool 2s forwards;
+}
+
+.final-message {
+    font-size: 2.5em; /* Increased font size */
+    color: #047af8;
+    display: none;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .animation-container {
+        width: 700px;
+        height: 350px;
+    }
+
+    .alaa-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .meta-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .meta-text {
+        font-size: 20px;
+    }
+
+    .emojis {
+        font-size: 50px;
+    }
+
+    .blender-icon {
+        width: 100px; /* Adjusted size for smaller screens */
+        height: 100px;
+    }
+
+    .final-message {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 800px) {
+    .animation-container {
+        width: 600px;
+        height: 300px;
+    }
+
+    .alaa-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .meta-logo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .meta-text {
+        font-size: 18px;
+    }
+
+    .emojis {
+        font-size: 40px;
+    }
+
+    .blender-icon {
+        width: 80px; /* Further adjusted for medium screens */
+        height: 80px;
+    }
+
+    .final-message {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 600px) {
+    .animation-container {
+        width: 400px;
+        height: 250px;
+    }
+
+    .alaa-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .meta-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .meta-text {
+        font-size: 16px;
+    }
+
+    .emojis {
+        font-size: 30px;
+    }
+
+    .blender-icon {
+        width: 60px; /* Reduced size for mobile screens */
+        height: 60px;
+    }
+
+    .final-message {
+        font-size: 1.5em;
+    }
+}
